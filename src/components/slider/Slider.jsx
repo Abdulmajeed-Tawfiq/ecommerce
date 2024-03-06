@@ -41,7 +41,7 @@ function Slider() {
 
   // side effect to make Auto slider (get the next slide every 3 sec)
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 3000);
+    const intervalId = setInterval(nextSlide, 5000);
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
