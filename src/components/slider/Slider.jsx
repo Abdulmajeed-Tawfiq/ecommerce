@@ -7,7 +7,7 @@ import styles from "./Slider.module.css";
 function Slider() {
   const bannerData = [
     {
-      image: "/public/images/man.png",
+      image: "/images/man.png",
       heading: "Men's Collection",
       description: "Stylish and comfortable men's fashion for every occasion.",
     },
