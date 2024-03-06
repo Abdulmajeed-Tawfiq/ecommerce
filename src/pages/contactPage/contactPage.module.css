@@ -1,0 +1,70 @@
+.container {
+  max-width: 600px;
+  margin: 100px auto 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d4260;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      color: #2d4260;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      outline-color: #2d4260;
+
+      &:focus {
+        animation: outlineFadeIn 0.3s ease-in-out forwards;
+      }
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2d4260;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+@keyframes outlineFadeIn {
+  from {
+    outline-color: transparent;
+  }
+  to {
+    outline-color: #2d4260;
+  }
+}
