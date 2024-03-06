@@ -12,17 +12,17 @@ function Slider() {
       description: "Stylish and comfortable men's fashion for every occasion.",
     },
     {
-      image: "/public/images/watch.png",
+      image: "/images/watch.png",
       heading: "Accessories",
       description: "Trendy Accessories for the modern man and woman",
     },
     {
-      image: "/public/images/manBag.png",
+      image: "/images/manBag.png",
       heading: "Men's Bag",
       description: "Durable and functional men's accessory.",
     },
     {
-      image: "/public/images/womanBag.png",
+      image: "/images/womanBag.png",
       heading: "Women's Bag",
       description: "Elegant and practical woman's accessory.",
     },

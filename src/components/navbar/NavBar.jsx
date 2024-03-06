@@ -32,7 +32,7 @@ function NavBar() {
         </ul>
       </div>
       <NavLink className={styles.logo} to="/">
-        <img src="/public/logo.png" alt="logo" width={100} height={50} />
+        <img src="/logo.png" alt="logo" width={100} height={50} />
       </NavLink>
       <div className={styles.right}>
         <ul className={styles.navList}>

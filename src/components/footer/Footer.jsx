@@ -79,7 +79,7 @@ function Footer() {
         </div>
         <div className={styles.right}>
           <p>you can pay with</p>
-          <img src="/public/images/payment.png" alt="payment" />
+          <img src="/images/payment.png" alt="payment" />
         </div>
       </div>
     </footer>
