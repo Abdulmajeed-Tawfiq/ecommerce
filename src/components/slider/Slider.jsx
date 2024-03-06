@@ -7,22 +7,22 @@ import styles from "./Slider.module.css";
 function Slider() {
   const bannerData = [
     {
-      image: "../../../public/images/man.png",
+      image: "/public/images/man.png",
       heading: "Men's Collection",
       description: "Stylish and comfortable men's fashion for every occasion.",
     },
     {
-      image: "../../../public/images/watch.png",
+      image: "/public/images/watch.png",
       heading: "Accessories",
       description: "Trendy Accessories for the modern man and woman",
     },
     {
-      image: "../../../public/images/manBag.png",
+      image: "/public/images/manBag.png",
       heading: "Men's Bag",
       description: "Durable and functional men's accessory.",
     },
     {
-      image: "../../../public/images/womanBag.png",
+      image: "/public/images/womanBag.png",
       heading: "Women's Bag",
       description: "Elegant and practical woman's accessory.",
     },

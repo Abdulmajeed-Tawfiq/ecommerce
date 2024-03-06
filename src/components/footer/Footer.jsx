@@ -37,8 +37,8 @@ function Footer() {
           </span>
         </div>
         <div className={styles.socialIcons}>
-        <p>you can find us in</p>
-            <div className={styles.icons}>
+          <p>you can find us in</p>
+          <div className={styles.icons}>
             <a
               href="mailto:abdulmajeedtawfiq98@gmail.com"
               target="_blank"
@@ -67,8 +67,8 @@ function Footer() {
             >
               <TelegramIcon />
             </a>
-            </div>
           </div>
+        </div>
       </div>
       <div className={styles.bottom}>
         <div className={styles.left}>
@@ -79,7 +79,7 @@ function Footer() {
         </div>
         <div className={styles.right}>
           <p>you can pay with</p>
-          <img src="../../../public/images/payment.png" alt="payment" />
+          <img src="/public/images/payment.png" alt="payment" />
         </div>
       </div>
     </footer>
