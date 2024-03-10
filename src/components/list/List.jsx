@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import useFetch from "../../hooks/useFetch";
 import Card from "../card/Card";
 import styles from "./List.module.css";
@@ -15,7 +14,9 @@ function List({ catId, subCats, sort }) {
 
   return (
     <div className={styles.list}>
-      {loading ? "loading..." : data?.map((item) => <Card item={item} />)}
+      {loading
+        ? "loading..."
+        : data?.map((item) => <Card item={item} key={item.id} />)}
     </div>
   );
 }
