@@ -7,6 +7,7 @@ import useFetch from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
 import styles from "./Product.module.css";
+import SkeletonCard from "../../components/skeletonCard/SkeletonCard";
 
 function Product() {
   const id = useParams().id;
@@ -26,7 +27,9 @@ function Product() {
   return (
     <div className={styles.product}>
       {loading ? (
-        "Loading..."
+        Array.from({ length: 2 }).map((_, index) => (
+          <SkeletonCard key={index} />
+        )) // Display skeleton cards while loading
       ) : (
         <>
           <div className={styles.left}>

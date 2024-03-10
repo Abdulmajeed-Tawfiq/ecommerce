@@ -1,6 +1,7 @@
 import Card from "../card/Card";
 import styles from "./FeaturedProducts.module.css";
 import useFetch from "../../hooks/useFetch";
+import SkeletonCard from "../skeletonCard/SkeletonCard";
 
 // eslint-disable-next-line react/prop-types
 function FeaturedProducts({ type }) {
@@ -26,7 +27,9 @@ function FeaturedProducts({ type }) {
         {error
           ? "someThing went wrong"
           : loading
-          ? "loading..."
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <SkeletonCard key={index} />
+            )) // Display skeleton cards while loading
           : featuredData.map((item) => <Card item={item} key={item.id} />)}
       </div>
     </div>
