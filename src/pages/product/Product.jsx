@@ -22,8 +22,6 @@ function Product() {
     setLoading(false);
   }, 800);
 
-  console.log(data);
-
   return (
     <div className={styles.product}>
       {error ? (

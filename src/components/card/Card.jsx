@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
 function Card({ item }) {
-  console.log(item);
   return (
     <Link className={styles.link} to={`/product/${item.id}`}>
       <div className={styles.card}>
