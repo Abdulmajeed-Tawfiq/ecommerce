@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
-import styles from "./Product.module.css";
 import SkeletonCard from "../../components/skeletonCard/SkeletonCard";
+import styles from "./Product.module.css";
 
 function Product() {
   const id = useParams().id;
@@ -54,7 +54,9 @@ function Product() {
           </div>
           <div className={styles.right}>
             <h1>{data?.attributes?.title}</h1>
-            <span className={styles.price}>{data?.attributes?.price}</span>
+            <p className={styles.price}>
+              price: <span>{data?.attributes?.price} $</span>
+            </p>
             <p>{data?.attributes?.desc}</p>
             <div className={styles.quantity}>
               <button

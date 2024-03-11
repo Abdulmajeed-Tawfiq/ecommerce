@@ -36,8 +36,10 @@
 
     .price {
       font-size: 30px;
-      color: #2879fe;
-      font-weight: 500;
+      span {
+        color: #2879fe;
+        font-weight: 500;
+      }
     }
 
     p {
