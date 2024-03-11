@@ -20,7 +20,7 @@ function Product() {
   const { data, error } = useFetch(`/products/${id}?populate=*`);
   setTimeout(() => {
     setLoading(false);
-  }, 800);
+  }, 1000);
 
   return (
     <div className={styles.product}>
