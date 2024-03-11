@@ -64,8 +64,8 @@ function Slider() {
               <Link
                 to={`${
                   data.heading === "Men's Collection"
-                    ? "products/2"
-                    : "products/4"
+                    ? "products/men"
+                    : "products/Accessories"
                 }`}
               >
                 shop now
