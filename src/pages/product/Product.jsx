@@ -17,20 +17,22 @@ function Product() {
 
   const dispatch = useDispatch();
 
-  const { data } = useFetch(`/products/${id}?populate=*`);
+  const { data, error } = useFetch(`/products/${id}?populate=*`);
   setTimeout(() => {
     setLoading(false);
-  }, 1000);
+  }, 800);
 
   console.log(data);
 
   return (
     <div className={styles.product}>
-      {loading ? (
+      {error ? (
+        "someThing went wrong"
+      ) : loading ? (
         Array.from({ length: 2 }).map((_, index) => (
           <SkeletonCard key={index} />
         )) // Display skeleton cards while loading
-      ) : (
+      ) : data.attributes.img ? (
         <>
           <div className={styles.left}>
             <div className={styles.images}>
@@ -93,19 +95,22 @@ function Product() {
             <div className={styles.info}>
               <span>Vendor: Polo</span>
               <span>
-                Product Type:{" "}
+                Product Type:
                 {data?.attributes?.sub_categories?.data[0].attributes.title}
               </span>
               <span>
-                Tag:{" "}
-                {data?.attributes?.sub_categories?.data[0].attributes.title},{" "}
-                {data?.attributes?.type}
+                Tag:
+                {
+                  data?.attributes?.sub_categories?.data[0].attributes.title
+                }, {data?.attributes?.type}
               </span>
             </div>
             <hr />
             <div className={styles.info}></div>
           </div>
         </>
+      ) : (
+        ""
       )}
     </div>
   );

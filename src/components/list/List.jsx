@@ -1,22 +1,31 @@
+import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import Card from "../card/Card";
+import SkeletonCard from "../skeletonCard/SkeletonCard";
 import styles from "./List.module.css";
 
-/* follow this link to know how tu use [filters] on strapi
-https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication#filtering */
-
-function List({ catId, subCats, sort }) {
+// eslint-disable-next-line react/prop-types
+function List({ catId }) {
   const { data, loading } = useFetch(
-    `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
-      (item) => `&[filters][sub_categories][id][$eq]=${item}`
-    )}`
+    catId === "new"
+      ? `/products?populate=*&filters[isNew][$eq]=true`
+      : `/products?populate=*&filters[category][$eq]=${catId}`
   );
 
   return (
     <div className={styles.list}>
-      {loading
-        ? "loading..."
-        : data?.map((item) => <Card item={item} key={item.id} />)}
+      {loading ? (
+        Array.from({ length: 3 }).map((_, index) => (
+          <SkeletonCard key={index} />
+        )) // Display skeleton cards while loading
+      ) : data.length === 0 ? (
+        <div className={styles.noItems}>
+          <p>oops... there is no product on this categry</p>
+          <Link to="/">bakc to home</Link>
+        </div>
+      ) : (
+        data?.map((item) => <Card item={item} key={item.id} />)
+      )}
     </div>
   );
 }
