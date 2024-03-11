@@ -20,7 +20,7 @@ function List({ catId }) {
         )) // Display skeleton cards while loading
       ) : data.length === 0 ? (
         <div className={styles.noItems}>
-          <p>oops... there is no product on this categry</p>
+          <p>oops... there is no product on this category</p>
           <Link to="/">bakc to home</Link>
         </div>
       ) : (

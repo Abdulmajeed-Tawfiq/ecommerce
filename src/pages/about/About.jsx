@@ -30,8 +30,8 @@ function About() {
             scalable API.
           </li>
           <li>
-            <strong>Database:</strong> MySQL for storing product information,
-            user data, and order details.
+            <strong>Database:</strong> PostgreSQL for storing product
+            information, user data, and order details.
           </li>
           <li>
             <strong>Build Tools:</strong> Vite for fast and efficient
@@ -48,6 +48,9 @@ function About() {
           <li>
             <strong>Routing:</strong> React Router for managing navigation
             within the application.
+          </li>
+          <li>
+            <strong>Payment:</strong> Stripe for make Payments infrastructure.
           </li>
         </ul>
       </div>
