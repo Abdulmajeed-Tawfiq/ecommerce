@@ -60,12 +60,10 @@
     }
   }
 
-  /* medium screen */
-  @media (max-width: 900px) {
-  }
-
   /* small screen */
   @media (max-width: 667px) {
+    margin-inline: 20px;
+    max-width: 400px;
   }
 
   @keyframes outlineFadeIn {

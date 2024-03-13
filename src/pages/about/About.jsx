@@ -4,6 +4,7 @@ function About() {
   return (
     <div className={styles.container}>
       <p className={styles.text}>
+        <span>About </span>
         Welcome to our E-commerce platform, a seamless blend of technology and
         fashion designed to elevate your shopping experience. Our project is a
         full-stack E-commerce application that leverages the power of React for

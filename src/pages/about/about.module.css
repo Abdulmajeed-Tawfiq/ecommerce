@@ -6,6 +6,17 @@
   font-size: 18px;
   line-height: 30px;
 
+  .text {
+    span {
+      display: block;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #2d4260;
+    }
+  }
+
   .tech {
     margin-top: 50px;
 
@@ -16,5 +27,14 @@
     strong {
       color: #2d4260;
     }
+  }
+
+  @media (max-width: 900px) {
+    padding-inline: 50px;
+  }
+
+  @media (max-width: 667px) {
+    padding-inline: 25px;
+    text-align: center;
   }
 }

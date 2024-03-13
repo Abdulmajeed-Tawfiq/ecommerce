@@ -2,7 +2,7 @@
   padding: 20px 50px;
   display: flex;
   gap: 50px;
-  margin-top: 150px;
+  margin-top: 100px;
 
   .left {
     flex: 1;
@@ -121,5 +121,29 @@
       font-size: 14px;
       margin-top: 30px;
     }
+  }
+
+  /* medium screen */
+  @media (max-width: 900px) {
+    padding: 20px 30px;
+    .left {
+      flex-direction: column-reverse;
+
+      .mainImg {
+        max-height: 400px;
+        /* max-height: 250px; */
+        img {
+          height: 100%;
+        }
+      }
+      .images {
+        display: flex;
+      }
+    }
+  }
+
+  /* small screen */
+  @media (max-width: 667px) {
+    flex-direction: column;
   }
 }
