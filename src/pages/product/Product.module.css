@@ -138,6 +138,7 @@
       }
       .images {
         display: flex;
+        gap: 10px;
       }
     }
   }
@@ -145,5 +146,9 @@
   /* small screen */
   @media (max-width: 667px) {
     flex-direction: column;
+    .images {
+      display: flex;
+      gap: 10px;
+    }
   }
 }
