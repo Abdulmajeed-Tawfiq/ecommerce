@@ -5,6 +5,7 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
 
   h2 {
     text-align: center;
@@ -58,13 +59,21 @@
       background-color: #0056b3;
     }
   }
-}
 
-@keyframes outlineFadeIn {
-  from {
-    outline-color: transparent;
+  /* medium screen */
+  @media (max-width: 900px) {
   }
-  to {
-    outline-color: #2d4260;
+
+  /* small screen */
+  @media (max-width: 667px) {
+  }
+
+  @keyframes outlineFadeIn {
+    from {
+      outline-color: transparent;
+    }
+    to {
+      outline-color: #2d4260;
+    }
   }
 }

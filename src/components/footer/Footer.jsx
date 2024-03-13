@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.top}>
-        <div className={styles.item}>
+        <div className={`${styles.item} ${styles.cat}`}>
           <h1>Categories</h1>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
@@ -26,7 +26,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className={styles.item}>
+        <div className={`${styles.item} ${styles.about}`}>
           <h1>About</h1>
           <span>
             Welcome to our E-commerce platform, a seamless blend of technology
