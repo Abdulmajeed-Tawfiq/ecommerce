@@ -1,11 +1,12 @@
 .featured {
-  margin: 100px 200px;
+  margin: 100px 0;
 
   .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+    padding-inline: 50px;
 
     h1 {
       flex: 2;
@@ -20,7 +21,16 @@
 
   .bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+  }
+
+  /* small screen */
+  @media (max-width: 667px) {
+    .top {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 }

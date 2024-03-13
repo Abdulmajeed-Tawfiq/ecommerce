@@ -1,5 +1,6 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   align-items: center;
   padding: 8px 40px;
@@ -38,16 +39,18 @@
 
   .logo {
     padding: 0 10px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
   }
 
   .right {
     display: flex;
     align-items: center;
     gap: 25px;
+    justify-content: flex-end;
+
+    .navPhone {
+      display: none;
+    }
 
     .icones {
       display: flex;
@@ -81,6 +84,71 @@
       &:hover {
         transform: scale(1.2);
         color: #2d4260;
+      }
+    }
+  }
+
+  /* medium screen */
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    .left {
+      display: none;
+    }
+    .logo {
+      padding: 0;
+    }
+  }
+
+  /* phone screen */
+  @media (max-width: 667px) {
+    /* grid-template-columns: auto; */
+    .right {
+      .navList {
+        display: none;
+      }
+      .navPhone {
+        display: flex;
+        list-style-type: none;
+
+        .items {
+          display: none;
+        }
+
+        .icones {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          color: #777;
+          .cartIcon {
+            position: relative;
+            display: flex;
+            span {
+              font-size: 12px;
+              width: 18px;
+              height: 18px;
+              border-radius: 50%;
+              background-color: #2879fe;
+              color: white;
+              position: absolute;
+              right: 0px;
+              top: -10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        .icones svg {
+          margin-right: 0.5rem;
+          transition: all ease 0.3s;
+          font-size: 25px;
+          &:hover {
+            transform: scale(1.2);
+            color: #2d4260;
+          }
+        }
       }
     }
   }

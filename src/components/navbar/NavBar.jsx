@@ -55,6 +55,19 @@ function NavBar() {
             </div>
           </div>
         </ul>
+
+        {/* display on phone screen only */}
+        <ul className={styles.navPhone}>
+          <div className={styles.icones}>
+            <SearchIcon />
+            <PersonOutlineOutlinedIcon />
+            <FavoriteBorderOutlinedIcon />
+            <div className={styles.cartIcon} onClick={() => setOpen(!open)}>
+              <ShoppingCartOutlinedIcon />
+              <span>{products.length}</span>
+            </div>
+          </div>
+        </ul>
       </div>
       {open && <Cart />}
     </nav>

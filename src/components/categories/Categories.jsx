@@ -4,6 +4,7 @@ import styles from "./Categories.module.css";
 function Categories() {
   return (
     <div className={styles.categories}>
+      <h2>Categories</h2>
       <div className={styles.col}>
         <div className={styles.row}>
           <img

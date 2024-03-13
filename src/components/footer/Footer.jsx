@@ -71,13 +71,13 @@ function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        <div className={styles.left}>
-          <span className="logo">Tawfik Store</span>
-          <span className="copyright">
-            © Copyright 2024. All Rights Reserved
-          </span>
+        <div className={styles.text}>
+          <div className={styles.copyright}>
+            <span className={styles.name}>Tawfik Store</span>© Copyright 2024.
+            All Rights Reserved
+          </div>
         </div>
-        <div className={styles.right}>
+        <div className={styles.pay}>
           <p>you can pay with</p>
           <img src="/images/payment.png" alt="payment" />
         </div>

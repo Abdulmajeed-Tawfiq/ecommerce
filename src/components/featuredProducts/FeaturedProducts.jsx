@@ -1,7 +1,7 @@
 import Card from "../card/Card";
-import styles from "./FeaturedProducts.module.css";
 import useFetch from "../../hooks/useFetch";
 import SkeletonCard from "../skeletonCard/SkeletonCard";
+import styles from "./FeaturedProducts.module.css";
 
 // eslint-disable-next-line react/prop-types
 function FeaturedProducts({ type }) {
