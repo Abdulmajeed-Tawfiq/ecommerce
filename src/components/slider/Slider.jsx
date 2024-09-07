@@ -1,6 +1,6 @@
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { categoriesData } from "../cpnstant/Constant";
 import styles from "./Slider.module.css";
@@ -30,10 +30,10 @@ function Slider() {
   };
 
   // side effect to make Auto slider (get the next slide every 5 sec)
-  // useEffect(() => {
-  //   const intervalId = setInterval(nextSlide, 5000);
-  //   return () => clearInterval(intervalId);
-  // }, [currentSlide]);
+  useEffect(() => {
+    const intervalId = setInterval(nextSlide, 5000);
+    return () => clearInterval(intervalId);
+  }, [currentSlide]);
 
   return (
     <div className={styles.slider}>
