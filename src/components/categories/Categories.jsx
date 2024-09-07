@@ -8,7 +8,7 @@ function Categories() {
       <div className={styles.col}>
         <div className={styles.row}>
           <img
-            src="../../../public/images/category/pexels-photo-322207.jpeg"
+            src="/images/category/pexels-photo-322207.jpeg"
             alt="Accessories"
           />
 
@@ -18,7 +18,7 @@ function Categories() {
         </div>
         <div className={styles.row}>
           <img
-            src="../../../public/images/category/women.jpeg"
+            src="/images/category/women.jpeg"
             alt="Women"
           />
 
@@ -30,7 +30,7 @@ function Categories() {
       <div className={styles.col}>
         <div className={styles.row}>
           <img
-            src="../../../public/images/category/all.jpeg"
+            src="/images/category/all.jpeg"
             alt="All Product"
           />
 
@@ -44,7 +44,7 @@ function Categories() {
           <div className={styles.col}>
             <div className={styles.row}>
               <img
-            src="../../../public/images/category/men.jpeg"
+            src="/images/category/men.jpeg"
             alt="Men"
               />
 
@@ -56,7 +56,7 @@ function Categories() {
         </div>
         <div className={styles.row}>
           <img
-            src="../../../public/images/category/electronics.jpg"
+            src="/images/category/electronics.jpg"
             alt="teenager"
           />
 
