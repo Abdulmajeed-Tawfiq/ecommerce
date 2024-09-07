@@ -32,7 +32,7 @@ function Cart() {
         sessionId: response.data.stripeSession.id,
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

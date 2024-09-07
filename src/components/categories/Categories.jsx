@@ -8,21 +8,21 @@ function Categories() {
       <div className={styles.col}>
         <div className={styles.row}>
           <img
-            src="https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="../../../public/images/category/pexels-photo-322207.jpeg"
             alt="Accessories"
           />
 
-          <Link className={styles.link} to="/products/Accessories">
-            Accessories
+          <Link className={styles.link} to="/products/jewelery">
+            Jewelery
           </Link>
         </div>
         <div className={styles.row}>
           <img
-            src="https://images.pexels.com/photos/733850/pexels-photo-733850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="../../../public/images/category/women.jpeg"
             alt="Women"
           />
 
-          <Link to="/products/women" className={styles.link}>
+          <Link to="/products/women's clothing" className={styles.link}>
             Women
           </Link>
         </div>
@@ -30,12 +30,12 @@ function Categories() {
       <div className={styles.col}>
         <div className={styles.row}>
           <img
-            src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="New Season"
+            src="../../../public/images/category/all.jpeg"
+            alt="All Product"
           />
 
-          <Link to="/products/new" className={styles.link}>
-            New Season
+          <Link to="/products/all" className={styles.link}>
+            All Product
           </Link>
         </div>
       </div>
@@ -44,11 +44,11 @@ function Categories() {
           <div className={styles.col}>
             <div className={styles.row}>
               <img
-                src="https://images.pexels.com/photos/15954841/pexels-photo-15954841/free-photo-of-group-of-men-sitting-on-the-grass-in-mountains.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Men"
+            src="../../../public/images/category/men.jpeg"
+            alt="Men"
               />
 
-              <Link to="/products/men" className={styles.link}>
+              <Link to="/products/men's clothing" className={styles.link}>
                 Men
               </Link>
             </div>
@@ -56,12 +56,12 @@ function Categories() {
         </div>
         <div className={styles.row}>
           <img
-            src="https://images.pexels.com/photos/9558770/pexels-photo-9558770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="../../../public/images/category/electronics.jpg"
             alt="teenager"
           />
 
-          <Link to="/products/teenager" className={styles.link}>
-            teenager
+          <Link to="/products/electronics" className={styles.link}>
+            Electronics
           </Link>
         </div>
       </div>

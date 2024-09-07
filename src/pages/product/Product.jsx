@@ -1,23 +1,20 @@
-import { useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BalanceIcon from "@mui/icons-material/Balance";
-import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cartReducer";
+import { useParams } from "react-router-dom";
 import SkeletonCard from "../../components/skeletonCard/SkeletonCard";
+import useFetch from "../../hooks/useFetch";
+import { addToCart } from "../../redux/cartReducer";
 import styles from "./Product.module.css";
 
 function Product() {
   const id = useParams().id;
-  const [selectedImg, setSelectedImg] = useState("img");
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
+  const { data, error } = useFetch(`/products/${id}`);
 
-  const { data, error } = useFetch(`/products/${id}?populate=*`);
   setTimeout(() => {
     setLoading(false);
   }, 1000);
@@ -30,34 +27,36 @@ function Product() {
         Array.from({ length: 2 }).map((_, index) => (
           <SkeletonCard key={index} />
         )) // Display skeleton cards while loading
-      ) : data.attributes.img ? (
+      ) : (
         <>
           <div className={styles.left}>
             <div className={styles.images}>
               <img
-                src={data?.attributes?.img?.data?.attributes?.url}
+                src={data?.image}
                 alt="image 1"
-                onClick={() => setSelectedImg("img")}
-              />
-              <img
-                src={data?.attributes?.img2?.data?.attributes?.url}
-                alt="image 2"
-                onClick={() => setSelectedImg("img2")}
-              />
-            </div>
-            <div className={styles.mainImg}>
-              <img
-                src={data?.attributes[selectedImg]?.data?.attributes?.url}
-                alt=""
+                // onClick={() => setSelectedImg("img")}
               />
             </div>
           </div>
+
           <div className={styles.right}>
-            <h1>{data?.attributes?.title}</h1>
+            <h1>{data?.title}</h1>
+            <div className={styles.info}>
+              <span>
+                Product Type:
+                {data?.description}
+              </span>
+              {/* <span>
+                Tag:
+                {
+                  data?.attributes?.sub_categories?.data[0].attributes.title
+                }, {data?.attributes?.type}
+              </span> */}
+            </div>
             <p className={styles.price}>
-              price: <span>{data?.attributes?.price} $</span>
+              price: <span>{data?.price} $</span>
             </p>
-            <p>{data?.attributes?.desc}</p>
+            <p>{data?.desc}</p>
             <div className={styles.quantity}>
               <button
                 onClick={() => setQuantity(quantity === 1 ? 1 : quantity - 1)}
@@ -66,51 +65,37 @@ function Product() {
               </button>
               <span>{quantity}</span>
               <button onClick={() => setQuantity(quantity + 1)}>+</button>
+              <div className={styles.addtoCart}>
+                <button
+                  className={styles.add}
+                  onClick={() =>
+                    dispatch(
+                      addToCart({
+                        id: data.id,
+                        title: data.attributes.title,
+                        desc: data.attributes.desc,
+                        price: data.attributes.price,
+                        img: data.attributes.img.data.attributes.url,
+                        quantity,
+                      })
+                    )
+                  }
+                >
+                  <AddShoppingCartIcon /> ADD TO CART
+                </button>
+              </div>
             </div>
-            <button
-              className={styles.add}
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    id: data.id,
-                    title: data.attributes.title,
-                    desc: data.attributes.desc,
-                    price: data.attributes.price,
-                    img: data.attributes.img.data.attributes.url,
-                    quantity,
-                  })
-                )
-              }
-            >
-              <AddShoppingCartIcon /> ADD TO CART
-            </button>
-            <div className={styles.links}>
+
+            {/* <div className={styles.links}>
               <div className={styles.item}>
                 <FavoriteBorderIcon /> ADD TO WISH LIST
               </div>
               <div className={styles.item}>
                 <BalanceIcon /> ADD TO COMPARE
               </div>
-            </div>
-            <div className={styles.info}>
-              <span>Vendor: Polo</span>
-              <span>
-                Product Type:
-                {data?.attributes?.sub_categories?.data[0].attributes.title}
-              </span>
-              <span>
-                Tag:
-                {
-                  data?.attributes?.sub_categories?.data[0].attributes.title
-                }, {data?.attributes?.type}
-              </span>
-            </div>
-            <hr />
-            <div className={styles.info}></div>
+            </div> */}
           </div>
         </>
-      ) : (
-        ""
       )}
     </div>
   );

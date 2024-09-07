@@ -21,7 +21,6 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle the form submission, e.g., send the data to your backend
-    console.log(formData);
   };
 
   return (

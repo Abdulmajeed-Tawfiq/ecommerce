@@ -18,16 +18,16 @@ function NavBar() {
       <div className={styles.left}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <NavLink to="products/men"> Men</NavLink>
+            <NavLink to="products/men's clothing"> Men</NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink to="products/women"> Women</NavLink>
+            <NavLink to="products/women's clothing"> Women</NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink to="products/teenager"> teenager</NavLink>
+            <NavLink to="products/jewelery"> Jewelery</NavLink>
           </li>
           <li className={styles.navItem}>
-            <NavLink to="products/Accessories"> Accessories</NavLink>
+            <NavLink to="products/electronics"> Electronics</NavLink>
           </li>
         </ul>
       </div>

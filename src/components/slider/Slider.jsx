@@ -1,32 +1,22 @@
-import { useEffect, useState } from "react";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { categoriesData } from "../cpnstant/Constant";
 import styles from "./Slider.module.css";
 
 function Slider() {
-  const bannerData = [
-    {
-      image: "/images/man.png",
-      heading: "Men's Collection",
-      description: "Stylish and comfortable men's fashion for every occasion.",
-    },
-    {
-      image: "/images/watch.png",
-      heading: "Accessories",
-      description: "Trendy Accessories for the modern man and woman",
-    },
-    {
-      image: "/images/manBag.png",
-      heading: "Men's Bag",
-      description: "Durable and functional men's accessory.",
-    },
-    {
-      image: "/images/womanBag.png",
-      heading: "Women's Bag",
-      description: "Elegant and practical woman's accessory.",
-    },
-  ];
+  // const { data } = useFetch("/categories");
+  // const [bannerData2, SETbannerData2] = useState();
+
+  // setTimeout(() => {
+  //   const new2 = data?.data?.slice(0, 4)?.map((category) => ({
+  //     image: category.image,
+  //     heading: category.name,
+  //     // description: "category.description",
+  //   }));
+  //   SETbannerData2(new2);
+  // }, 2000);
 
   // state for handle the current slide
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,11 +29,11 @@ function Slider() {
     setCurrentSlide(currentSlide === 3 ? 0 : (prev) => prev + 1);
   };
 
-  // side effect to make Auto slider (get the next slide every 3 sec)
-  useEffect(() => {
-    const intervalId = setInterval(nextSlide, 5000);
-    return () => clearInterval(intervalId);
-  }, [currentSlide]);
+  // side effect to make Auto slider (get the next slide every 5 sec)
+  // useEffect(() => {
+  //   const intervalId = setInterval(nextSlide, 5000);
+  //   return () => clearInterval(intervalId);
+  // }, [currentSlide]);
 
   return (
     <div className={styles.slider}>
@@ -53,20 +43,16 @@ function Slider() {
           transform: `translateX(-${currentSlide * window.innerWidth}px)`,
         }}
       >
-        {bannerData.map((data, index) => (
+        {categoriesData.map((data, index) => (
           <div
             key={index}
             className={`${styles.slide} ${styles[`slide${index}`]}`}
           >
             <div className={styles.text}>
               <h2>{data.heading}</h2>
-              <p>{data.description}</p>
+              {/* <p>{data.description}</p> */}
               <Link
-                to={`${
-                  data.heading === "Men's Collection"
-                    ? "products/men"
-                    : "products/Accessories"
-                }`}
+                to={data?.link}
               >
                 shop now
               </Link>

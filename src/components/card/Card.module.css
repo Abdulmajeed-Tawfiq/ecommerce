@@ -4,14 +4,15 @@
 }
 
 .card {
-  width: 220px;
+  width: 250px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   border: 2px solid #eee;
   box-shadow: 2px 2px 2px #eee;
   border-radius: 10px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   transition: 0.3s;
 
   .image {
@@ -26,7 +27,7 @@
       transition: 0.5s;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       position: absolute;
     }
 
@@ -43,6 +44,7 @@
       border-radius: 5px;
     }
   }
+
   &:hover img {
     transform: scale(1.13);
   }
@@ -52,6 +54,8 @@
     justify-content: space-between;
     align-items: center;
     padding-inline: 15px;
+    flex-direction: column;
+    flex: 1;
 
     h2 {
       color: #3e9185;
